@@ -1,23 +1,190 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adın Soyadın</title>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; line-height: 1.6; }
-    h1 { margin-bottom: 0; }
-    a { color: #0b5cad; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selahattin Aksoy · Machine learning for drug repurposing</title>
+<meta name="description" content="Portfolio of Selahattin Aksoy: machine learning, bioinformatics and drug repurposing. Research assistant at Muğla University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fb;--panel:#ffffff;--ink:#16213e;--mut:#5b6785;--line:#dde2ee;--acc:#0e7490;--acc2:#d6456b;--chip:#e6f1f5}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1526;--panel:#17203a;--ink:#e8ecf7;--mut:#9aa6c4;--line:#2a3555;--acc:#4cc3dc;--acc2:#ff7d9d;--chip:#1e2d47}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.15;margin:0}
+a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:290px minmax(0,1fr);gap:56px;max-width:1120px;margin:0 auto;padding:48px 24px}
+aside{position:sticky;top:32px;align-self:start}
+.photo{width:190px;height:190px;border-radius:50%;object-fit:cover;display:block;border:4px solid var(--panel);box-shadow:0 0 0 2px var(--acc)}
+.avatar{width:190px;height:190px;border-radius:50%;display:none;place-items:center;font:700 56px "Bricolage Grotesque",sans-serif;background:var(--chip);color:var(--acc);box-shadow:0 0 0 2px var(--acc)}
+aside h1{font-size:30px;margin:22px 0 6px}
+.role{color:var(--mut);margin:0 0 20px}
+nav{display:flex;flex-direction:column;gap:2px;margin:0 0 22px;border-left:2px solid var(--line)}
+nav a{padding:5px 14px;color:var(--mut);text-decoration:none;margin-left:-2px;border-left:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-left-color:var(--acc)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:14px;color:var(--ink);background:var(--panel)}
+.links a:hover{border-color:var(--acc);color:var(--acc)}
+.hero{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 30px 8px;margin-bottom:56px}
+.hero h2{font-size:clamp(28px,4vw,42px);max-width:20ch}
+.hero p{max-width:60ch;color:var(--mut);margin:14px 0 6px}
+.net{width:100%;height:auto;display:block;margin-top:8px}
+.net .e{stroke:var(--line);stroke-width:2}
+.net .new{stroke:var(--acc2);stroke-width:3;stroke-dasharray:7 6;stroke-dashoffset:0;animation:draw 2.4s ease-out 1}
+@keyframes draw{from{stroke-dashoffset:260;opacity:.2}to{stroke-dashoffset:0;opacity:1}}
+.net text{font:500 13px "IBM Plex Sans",sans-serif;fill:var(--mut)}
+.net .d{fill:var(--acc)}.net .t{fill:var(--ink)}.net .z{fill:var(--acc2)}
+section{margin-bottom:56px;scroll-margin-top:24px}
+section>h2{font-size:28px;margin-bottom:6px}
+section>.sub{color:var(--mut);margin:0 0 22px}
+.item{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+.item time{color:var(--mut);font-size:14px;padding-top:3px}
+.item h3{font-size:19px}.item .who{color:var(--acc);margin:2px 0 6px;font-weight:500}.item p{margin:0 0 6px}
+.item ul{margin:6px 0 0;padding-left:20px}.item li{margin:2px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:19px}.card p{margin:0;color:var(--mut);font-size:15px}.card .tags{margin-top:auto;padding-top:6px}
+.card.main{grid-column:1/-1;border-color:var(--acc);border-width:2px}
+.card a.go{font-weight:500;text-decoration:none}.card a.go:hover{text-decoration:underline}
+.tags,.chips{display:flex;flex-wrap:wrap;gap:6px}
+.tags span,.chips span{background:var(--chip);color:var(--ink);border-radius:6px;padding:2px 10px;font-size:13.5px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skills h3{font-size:16px;margin-bottom:8px}
+footer{color:var(--mut);font-size:14px;border-top:1px solid var(--line);padding-top:18px}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:28px;padding:28px 18px}aside{position:static}nav{flex-direction:row;flex-wrap:wrap;border-left:0;gap:4px 14px}nav a{padding:2px 0;margin:0;border:0}.item{grid-template-columns:1fr;gap:4px}}
+@media (prefers-reduced-motion:reduce){.net .new{animation:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <h1>Adın Soyadın</h1>
-  <p>Kısa bir tanıtım yazısı.</p>
-  <h2>Projeler</h2>
-  <ul>
-    <li><a href="#">Proje 1</a></li>
-  </ul>
-  <h2>İletişim</h2>
-  <p><a href="mailto:ornek@mail.com">ornek@mail.com</a></p>
+<div class="wrap">
+<aside>
+  <!-- Put your photo next to this file as foto.jpg (or set src to https://github.com/YOUR_USERNAME.png) -->
+  <img class="photo" src="https://avatars.githubusercontent.com/u/48906352?v=4" alt="Portrait of Selahattin Aksoy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+  <div class="avatar" aria-hidden="true">SA</div>
+  <h1>Selahattin Aksoy</h1>
+  <p class="role">Research/Teaching Assistant and MSc student, Computer Engineering<br>Muğla University, Türkiye</p>
+  <nav aria-label="Sections">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a>
+    <a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#honours">Honours and funding</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="links">
+    <a href="mailto:selahattin2322@gmail.com">Email</a><a href="https://orcid.org/0000-0002-2574-7237">ORCID</a>
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a><a href="https://www.researchgate.net/profile/YOUR_PROFILE">ResearchGate</a><a href="https://github.com/YOUR_USERNAME">GitHub</a><a href="cv.pdf">CV (PDF)</a>
+  </div>
+</aside>
+
+<main>
+<div class="hero">
+  <h2>Machine learning to find new uses for existing drugs</h2>
+  <p>I curate protein–compound activity data from PubChem BioAssay and build IC50-based models for large-scale drug repurposing, including a workflow that screens 110 million compounds.</p>
+  <svg class="net" viewBox="0 0 640 190" role="img" aria-label="Network of drugs, target proteins and a disease; the dashed line marks a proposed new connection">
+    <line class="e" x1="70" y1="50" x2="250" y2="95"/><line class="e" x1="70" y1="150" x2="250" y2="95"/>
+    <line class="e" x1="250" y1="95" x2="430" y2="55"/><line class="e" x1="250" y1="95" x2="430" y2="140"/>
+    <line class="e" x1="430" y1="55" x2="580" y2="95"/>
+    <line class="new" x1="430" y1="140" x2="580" y2="95"/>
+    <circle class="d" cx="70" cy="50" r="13"/><circle class="d" cx="70" cy="150" r="13"/>
+    <rect class="t" x="236" y="81" width="28" height="28" rx="6"/>
+    <rect class="t" x="416" y="41" width="28" height="28" rx="6"/><rect class="t" x="416" y="126" width="28" height="28" rx="6"/>
+    <circle class="z" cx="580" cy="95" r="15"/>
+    <text x="40" y="182">drugs</text><text x="215" y="136">target proteins</text><text x="545" y="132">disease</text><text x="330" y="22" style="fill:var(--acc2)">proposed new connection</text>
+  </svg>
+</div>
+
+<section id="about">
+  <h2>About</h2>
+  <p class="sub">Research assistant, MSc student and visiting researcher in three European groups</p>
+  <p>I am a Research/Teaching Assistant and MSc student in Computer Engineering at Muğla University, with a previous MSc in Bioinformatics (GPA 3.93/4). My research centres on machine learning for drug discovery. I also work on natural language processing: natural language understanding, generative data augmentation and zero-/few-shot learning at Radboud University, and attention-based NLP with explainable AI for medical AI at the University of Milan.</p>
+  <div class="chips" style="margin-top:12px"><span>Drug repurposing</span><span>Machine learning</span><span>Deep learning</span><span>Bioinformatics</span><span>Medical image analysis</span><span>NLP and explainable AI</span><span>Language models for biomedical data curation</span></div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <p class="sub">Selected research and development work</p>
+  <div class="cards">
+    <div class="card main"><h3>PubChem BioAssay curation and IC50-based drug repurposing</h3>
+      <p>Muğla University. I extracted and curated bioassay data from PubChem BioAssay to train protein–drug IC50 activity models, and built a software workflow, generalizable to many proteins, that screens 110 million compounds for repositioning candidates (Useful Invention). I also developed a model for repurposed drug candidates that inhibit the non-globular CTNNB1 protein in the Wnt/β-catenin pathway in cancer (2nd ML4NGP Meeting, 2024).</p>
+      <div class="tags"><span>PubChem BioAssay</span><span>IC50 modelling</span><span>Large-scale screening</span><span>CTNNB1</span><span>EGFR</span></div></div>
+    <div class="card main"><h3>OncoScreen: virtual-screening atlas for cancer genes</h3>
+      <p>A Django web application that brings together the machine learning experiments, PDF reports and compound × bioassay heat maps of genes such as EGFR, BRAF and AR. Compounds are clustered by fingerprint similarity and bioassays by activity profile; both axes have dendrograms and cluster IDs. The pipeline uses stability selection, multi-classifier comparison, nested cross-validation and bootstrap confidence intervals.</p>
+      <div class="tags"><span>Python</span><span>Django</span><span>scikit-learn</span><span>SciPy</span><span>Plotly</span></div></div>
+    <div class="card"><h3>Drug repurposing web platform for cancer cohorts</h3><p>2020–2021, Health Institutes of Türkiye (PI: Tuğba Süzek). Built an ML model for candidate drugs for the EGFR gene and deployed it as a web application; designed a compound–gene heat map and maintained the project server.</p></div>
+    <div class="card"><h3>Early diagnosis of skeletal Class III malocclusion</h3><p>2021–2023, TÜBİTAK 1512, with follow-ups funded by KOSGEB SBIR and Horizon Europe Women TechEU. Developed ML models that work on mobile profile photos and an API for deployment; resulted in two papers and an international poster.</p></div>
+    <div class="card"><h3>Host specificity of adenoviruses</h3><p>2020–2023, TÜBİTAK 119E664 (PI: Barış E. Süzek). Set up the Linux server, deployed an Apache web server and built a web page presenting the project’s ML models and outputs.</p></div>
+    <div class="card"><h3>PerImmune</h3><p>2023–2024, EU Cofund Transcan-3 (PI: Tuğba Süzek). Intraperitoneal immune modulation for colorectal peritoneal metastases.</p></div>
+    <div class="card"><h3>Open-source ERP for small businesses</h3><p>2020–2021, TÜBİTAK 2209-B. As project manager I designed and developed the ERP application and a mobile management app, managed its databases and handled the budget.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <p class="sub">Academic positions, industry work and research visits</p>
+  <article class="item"><time>Feb 2026</time><div><h3>Visiting Scholar</h3><p class="who">University of Antwerp, Belgium</p></div></article>
+  <article class="item"><time>Jun – Sep 2025</time><div><h3>Visiting Scholar, Medical AI</h3><p class="who">University of Milan, Italy</p><p>Worked on natural language processing with attention-based models and explainable AI in a medical AI context.</p></div></article>
+  <article class="item"><time>Jul – Oct 2023</time><div><h3>Trainee Researcher</h3><p class="who">Radboud University, The Netherlands (NWO-supported HyLECA project, supervisor: Tibor Bosse)</p><ul><li>Reviewed the literature on natural language generation and data augmentation for expanding limited datasets.</li><li>Applied generative data augmentation to improve the NLU components of a chatbot infrastructure.</li><li>Explored classifier training for low-resource data, including zero-shot and few-shot learning.</li><li>Analysed the dialogue flows of two chatbots and programmed the flows of a smoking-cessation chatbot (Roby).</li></ul></div></article>
+  <article class="item"><time>2021 – present</time><div><h3>Research/Teaching Assistant</h3><p class="who">Dept. of Computer Engineering, Muğla University</p></div></article>
+  <article class="item"><time>2020 – 2024</time><div><h3>Machine Learning Engineer</h3><p class="who">Kedi Mobile Application, Inc.</p></div></article>
+  <article class="item"><time>2019 – 2020</time><div><h3>Part-Time Student Assistant</h3><p class="who">Dept. of Computer Engineering, Muğla University</p></div></article>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p class="sub">All degrees at Muğla University</p>
+  <article class="item"><time>2025 – present</time><div><h3>MSc in Computer Engineering</h3></div></article>
+  <article class="item"><time>2021 – 2024</time><div><h3>MSc in Bioinformatics</h3><p>GPA 3.93/4</p></div></article>
+  <article class="item"><time>2015 – 2021</time><div><h3>BSc in Computer Engineering</h3><p>GPA 3.05/4</p></div></article>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <p class="sub">Journal articles, posters and conference presentations</p>
+  <article class="item"><time>2022</time><div><h3>Comparative analysis of three machine learning models for early prediction of skeletal Class III malocclusion from profile photos</h3><p class="who">Aksoy S, Kılıç B, Önal-Süzek T. Muğla Journal of Science and Technology, 8, 22–30.</p></div></article>
+  <article class="item"><time>2023</time><div><h3>A family-centered orthodontic screening approach using a machine learning-based mobile application</h3><p class="who">Kılıç B, Ibrahim A.H, Aksoy S, et al. Journal of Dental Sciences. <a href="https://doi.org/10.1016/j.jds.2023.05.001">doi:10.1016/j.jds.2023.05.001</a></p></div></article>
+  <article class="item"><time>2024</time><div><h3>A machine learning model for discovering repurposed drug candidates to inhibit the non-globular CTNNB1 protein within the Wnt/β-catenin pathway in cancer</h3><p class="who">Aksoy S, Zengin T, Süzek T. 2nd ML4NGP Meeting on Machine Learning and Non-Globular Proteins.</p></div></article>
+  <article class="item"><time>2022</time><div><h3>A mobile application for early prediction of skeletal Class III malocclusion from profile photos integrating deep learning and machine learning models</h3><p class="who">Aksoy S, Kılıç B, Önal-Süzek T. ISCB 2022.</p></div></article>
+  <article class="item"><time>2022</time><div><h3>VIRBIOHUB: a central resource for virus bioinformatics research</h3><p class="who">Küçükyılmaz C.H, Ibrahim A.H, Aksoy S, Karabulut O.C, Karpuzcu B.A, Türk E, Süzek B.E. HIBIT 2022.</p></div></article>
+  <article class="item"><time>2021</time><div><h3>Assessment of a novel feature selection algorithm for virus–host protein–protein interaction</h3><p class="who">Ibrahim A.H, Türk E, Karpuzcu B.A, Aksoy S, Karabulut O.C, Süzek B.E. ISCB 2021.</p></div></article>
+</section>
+
+<section id="teaching">
+  <h2>Teaching</h2>
+  <p class="sub">Teaching assistantship at Muğla University</p>
+  <div class="chips"><span>Programming Fundamentals (Python)</span><span>Database Management Systems</span><span>Programming Language Concepts</span><span>Dynamic Web Programming</span><span>Web Development and Programming</span><span>Computer and Network Security</span><span>Computer Networks</span></div>
+</section>
+
+<section id="honours">
+  <h2>Honours and funding</h2>
+  <p class="sub">Fellowships and project support</p>
+  <article class="item"><time>TÜBİTAK</time><div><h3>2247-C Trainee Researcher Fellowship Program (STAR)</h3></div></article>
+  <article class="item"><time>TÜBİTAK</time><div><h3>2210-A Domestic Graduate Scholarship Programme</h3></div></article>
+  <article class="item"><time>TÜBİTAK</time><div><h3>2209-B Industrial Undergraduate Research Projects Support Programme</h3></div></article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="sub">Tools I use in research and engineering</p>
+  <div class="skills">
+    <div><h3>Machine learning</h3><div class="chips"><span>scikit-learn</span><span>XGBoost</span><span>LightGBM</span><span>CatBoost</span><span>Deep learning</span><span>Nested cross-validation</span><span>Explainable AI</span></div></div>
+    <div><h3>Data and domain</h3><div class="chips"><span>PubChem BioAssay curation</span><span>IC50 modelling</span><span>Virtual screening</span><span>Bioinformatics</span><span>NLP</span></div></div>
+    <div><h3>Engineering</h3><div class="chips"><span>Python</span><span>Django</span><span>API-based deployment</span><span>Apache</span><span>Linux server management</span><span>Databases</span></div></div>
+    <div><h3>Languages</h3><div class="chips"><span>Turkish (native)</span><span>English (fluent)</span></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="sub">Open to collaborations and research visits</p>
+  <p><a href="mailto:selahattin2322@gmail.com">selahattin2322@gmail.com</a><br>Muğla, Türkiye</p>
+</section>
+<footer>© <span id="y"></span> Selahattin Aksoy</footer>
+</main>
+</div>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const links=[...document.querySelectorAll('nav a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+</script>
 </body>
 </html>
